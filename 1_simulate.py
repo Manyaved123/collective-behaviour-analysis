@@ -94,7 +94,7 @@ for frame in range(N_FRAMES):
         })
 
 df = pd.DataFrame(records)
-df.to_csv("/home/claude/project/trajectories.csv", index=False)
+df.to_csv("trajectories.csv", index=False)
 print(f"Done! Simulated {N_FISH} fish over {N_FRAMES} frames.")
 print(f"Saved {len(df)} rows to trajectories.csv")
 print(df.head(10))

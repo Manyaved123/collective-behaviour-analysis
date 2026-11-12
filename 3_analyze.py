@@ -26,7 +26,7 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("/home/claude/project/trajectories.csv")
+df = pd.read_csv("trajectories.csv")
 INTERACTION_DISTANCE = 15  # same radius the fish used to "notice" each other
 
 # ---------------------------------------------------------------
@@ -59,7 +59,7 @@ for frame, group in df.groupby("frame"):
     metric_rows.append({"frame": frame, "polarization": polarization, "avg_nearest_neighbor_dist": cohesion})
 
 metrics_df = pd.DataFrame(metric_rows)
-metrics_df.to_csv("/home/claude/project/metrics_over_time.csv", index=False)
+metrics_df.to_csv("metrics_over_time.csv", index=False)
 
 print("=== Collective behaviour summary ===")
 print(f"Average polarization across whole simulation: {metrics_df['polarization'].mean():.3f} (0=random, 1=perfectly aligned)")
@@ -79,7 +79,7 @@ axes[1].set_xlabel("Frame")
 axes[1].set_title("How tightly grouped is the group over time?")
 
 plt.tight_layout()
-plt.savefig("/home/claude/project/metrics_plot.png", dpi=150)
+plt.savefig("metrics_plot.png", dpi=150)
 print("\nSaved metrics_plot.png")
 
 # ---------------------------------------------------------------
@@ -116,5 +116,5 @@ plt.figure(figsize=(7, 7))
 nx.draw(G, pos, with_labels=True, node_color="lightblue", node_size=500,
         edge_color="gray", font_size=9)
 plt.title(f"Interaction network at frame {last_frame}\n(edge = fish within {INTERACTION_DISTANCE} units of each other)")
-plt.savefig("/home/claude/project/network_plot.png", dpi=150)
+plt.savefig("network_plot.png", dpi=150)
 print("Saved network_plot.png")

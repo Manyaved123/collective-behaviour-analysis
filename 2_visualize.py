@@ -12,7 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
-df = pd.read_csv("/home/claude/project/trajectories.csv")
+df = pd.read_csv("trajectories.csv")
 
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
@@ -41,5 +41,5 @@ ax.set_xlim(0, 100)
 ax.set_ylim(0, 100)
 
 plt.tight_layout()
-plt.savefig("/home/claude/project/trails_and_snapshot.png", dpi=150)
+plt.savefig("trails_and_snapshot.png", dpi=150)
 print("Saved plot to trails_and_snapshot.png")

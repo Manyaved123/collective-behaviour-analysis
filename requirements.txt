@@ -1,0 +1,7 @@
+numpy
+pandas
+matplotlib
+networkx
+# only needed for tracker_final.py (live/video tracking):
+opencv-python
+ultralytics
